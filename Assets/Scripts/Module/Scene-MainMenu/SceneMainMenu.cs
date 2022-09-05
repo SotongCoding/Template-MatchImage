@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 using UnityEngine.UI;
-public class SceneMainMeni : MonoBehaviour
+public class SceneMainMenu : MonoBehaviour
 {
     [SerializeField] private Button playButton;
     [SerializeField] private Button ThemeSelectButton;
@@ -12,7 +12,7 @@ public class SceneMainMeni : MonoBehaviour
 
     private void Start() {
         playButton.onClick.AddListener(LoadGameplay);
-        playButton.onClick.AddListener(LoadThemeSelect);
+        ThemeSelectButton.onClick.AddListener(LoadThemeSelect);
     }
 
     private void LoadGameplay()
