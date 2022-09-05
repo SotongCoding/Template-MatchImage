@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5a4f0e1b9d4104085d979fc7761db5, type: 3}
+  m_Name: Theme Database
+  m_EditorClassIdentifier: 
+  themeData:
+  - themeName: Fruit
+    filename: fruit
+    themeId: 1
+    price: 0
+  - themeName: Food
+    filename: food
+    themeId: 2
+    price: 100
+  - themeName: Weapon
+    filename: weapon
+    themeId: 3
+    price: 200
+  - themeName: Random
+    filename: random
+    themeId: 4
+    price: 300
