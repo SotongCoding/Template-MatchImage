@@ -21,7 +21,7 @@ public class GameTimer
 
     public IEnumerator StartCount()
     {
-        while (_currentCount > 0)
+        while (_currentCount > 0 && GameFlow.Instance.isGameStart)
         {
             _currentCount -= Time.deltaTime;
             OnChangeTime?.Invoke((int)_currentCount);

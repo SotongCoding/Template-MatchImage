@@ -10,6 +10,11 @@ public class ThemeDatabase : ScriptableObject
     {
         return themeData.ToArray();
     }
+    public Sprite[] GetThemeSprite()
+    {
+        string targetFile = themeData.Find(x => x.themeId == SaveData.Instance.usedThemeId).filename;
+        return Resources.LoadAll<Sprite>(targetFile);
+    }
 
     [System.Serializable]
     public struct ThemeData

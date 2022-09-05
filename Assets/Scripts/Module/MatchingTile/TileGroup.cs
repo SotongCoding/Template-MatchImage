@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class TileGroup
 {
+    [SerializeField] ThemeDatabase themeDatabase;
+
     [Range(1, 6)]
     [SerializeField] private int matchVariation = 2;
     [Range(2, 30)]
@@ -35,6 +37,8 @@ public class TileGroup
 
     public void CreateTile(System.Action onDoneCreate = null)
     {
+        Sprite[] spritesVariation = themeDatabase.GetThemeSprite();
+
         //Vector2 tilePos = new Vector2();
         createdTileObject = new TileObject[areaSize.x, areaSize.y];
 
@@ -66,12 +70,13 @@ public class TileGroup
         {
             int id = variationCount < matchVariation ? variationCount :
             Random.Range(0, matchVariation);
+            int imageIndex = Random.Range(0, spritesVariation.Length);
 
             for (int ind = 0; ind < 2; ind++)
             {
                 int select = Random.Range(0, createdTile.Count);
 
-                createdTile[select].Initial(id, SetMatch);
+                createdTile[select].Initial(id, SetMatch, spritesVariation[imageIndex]);
                 createdTile.RemoveAt(select);
                 i++;
             }
@@ -96,7 +101,7 @@ public class TileGroup
         else
         {
             if (tileData.tileIndex == currentMatchTile.tileIndex) return;
-            
+
             if (currentMatchTile.tileId == tileData.tileId)
             {
                 currentMatchAmount++;

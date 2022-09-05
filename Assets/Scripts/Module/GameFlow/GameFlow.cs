@@ -30,5 +30,6 @@ public class GameFlow : MonoBehaviour
     public void GameOver(bool isMatchComplete)
     {
         OnGameEnd?.Invoke(isMatchComplete);
+        isGameStart = false;
     }
 }
